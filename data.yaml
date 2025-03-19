@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['Angry', 'Disgust', 'Happy', 'Neutral', 'Sad', 'Surprise']
+
+roboflow:
+  workspace: padamdaai
+  project: emotion-detection-data-vrwmf-r8djx
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/padamdaai/emotion-detection-data-vrwmf-r8djx/dataset/1
