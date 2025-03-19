@@ -5,6 +5,11 @@ import tempfile
 from ultralytics import YOLO
 import numpy as np
 import joblib
+import nest_asyncio
+import asyncio
+
+# Apply nest_asyncio to fix the event loop issue
+nest_asyncio.apply()
 
 # Load the YOLOv8 model trained on emotions (best.pt should be a model trained for emotion detection)
 model = YOLO('emotionaldetect.pt')
@@ -13,7 +18,7 @@ model = YOLO('emotionaldetect.pt')
 def detect_emotions(video_path):
     cap = cv2.VideoCapture(video_path)
     stframe = st.empty()
-    
+
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
